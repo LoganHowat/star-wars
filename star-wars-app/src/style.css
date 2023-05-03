@@ -1,0 +1,11 @@
+.background {
+    background-color: black;
+    color: rgb(220, 189, 17);
+    height: 100vh;
+}
+
+.starfield {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
