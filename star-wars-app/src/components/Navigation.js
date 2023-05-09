@@ -23,6 +23,7 @@ function Navigation() {
             <NavLink to='/species' className='me-4'>Species</NavLink>
             <NavLink to='/planets' className='me-4'>Planets</NavLink>
             <NavLink to='/starships' className='me-4'>Starships</NavLink>
+            <NavLink to='/vehicle' className='me-4'>Vehicles</NavLink>
           </Nav.Link>
         </Nav>
       </Container>

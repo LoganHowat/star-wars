@@ -8,6 +8,8 @@ import { People } from './routes/People';
 import { Planets } from './routes/Planets';
 import { Species } from './routes/Species';
 import { Starships } from './routes/Starships';
+import { Vehicle } from './routes/Vehicle';
+import { DetailPage } from './routes/DetailPage';
 import './style.css';
 
 
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <BrowserRouter>
-        <div className='background'>
+        <div className='starfield-bg'>
           <StarfieldAnimation className='starfield'/>
           <div style={{ position: 'relative', zIndex: 1 }}>
             <Navigation />
@@ -29,6 +31,8 @@ function App() {
               <Route path='/planets' element={<Planets />} />
               <Route path='/species' element={<Species />} />
               <Route path='/starships' element={<Starships />} />
+              <Route path='/vehicle' element={<Vehicle />} />
+              <Route path='/:itemID' element={<DetailPage />} />
             </Routes>
           </div>
         </div>
