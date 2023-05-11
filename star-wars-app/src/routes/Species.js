@@ -30,8 +30,8 @@ function Species() {
     return (
       <div>
       {!isLoading ? 
-      <Container>
-        <h1>this is Species</h1>
+      <Container className="container">
+        <h1>Species</h1>
         <Row md={3} className='g-4'>
           {speciesList.map((species, index) => {
             return(

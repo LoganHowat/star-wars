@@ -29,8 +29,8 @@ function Planets() {
     return (
       <div>
       {!isLoading ? 
-      <Container>
-        <h1>this is Planets</h1>
+      <Container className="container">
+        <h1>Planets</h1>
         <Row md={3} className='g-4'>
           {planetsList.map((planet, index) => {
             return(

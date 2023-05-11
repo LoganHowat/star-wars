@@ -29,15 +29,17 @@ function People() {
     return (
       <div>
       {!isLoading ? 
-      <Container>
+      <Container className="container">
         <h1>this is People</h1>
         <Row md={3} className='g-4'>
           {people.map((person, index) => {
+            if (!person.detail){
             return(
               <Col>
-                <ItemCard name={person.name} id={`pe${index}`}/>
+                <ItemCard name={person.name} id={`pe${index+1}`}/>
               </Col>
             )
+            }
           })}
         </Row>
       </Container>

@@ -26,13 +26,13 @@ function Films() {
     return (
       <div>
         {!isLoading ? 
-          <Container>
+          <Container className="container">
             <h1 className="title">Films</h1>
             <Row md={3} className='g-4'>
-              {films.map((film) => {
+              {films.map((film, index) => {
                 return(
                   <Col>
-                    <ItemCard name={film.title} id={`f${film.episode_id}`}/>
+                    <ItemCard name={film.title} id={`f${index+1}`}/>
                   </Col>
                 )
               })}

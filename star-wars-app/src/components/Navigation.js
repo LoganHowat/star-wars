@@ -8,7 +8,7 @@ import Logo from '../assets/MF.png';
 
 function Navigation() {
   return (
-    <Navbar bg='dark' variant='dark' className='mb-4'>
+    <Navbar bg='dark' variant='dark' className='mb-4' data-testid='nav-1'>
       <Container>
         <Navbar.Brand>
           <Image src={Logo} width='60' height='50' className='me-2' />

@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import Spinner from 'react-bootstrap/Spinner';
-
-//A lot of missint values in this so skip any that have detail
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { ItemCard } from "../components/ItemCard";
 
 function Vehicle() {
 
   const [isLoading, setIsLoading] = useState(false)
+  const [vehicleList, setVehicles] = useState([])
 
   useEffect(() => {
     const fetchVehicles = async() => {
@@ -16,16 +19,33 @@ function Vehicle() {
         const data = await response.json()
         vehicles.push(data)
       }
+      setVehicles(vehicles)
       setIsLoading(false)
-      console.log(vehicles)
     };
     fetchVehicles()
   }, []);
 
     return (
       <div>
-      {!isLoading ? <h1>this is Starships</h1>: 
+      {!isLoading ? 
+      <Container className="container">
+        <h1>Vehicles</h1>
+        <Row md={3} className='g-4'>
+          {vehicleList.map((vehicle, index) => {
+            if (!vehicle.detail){
+            return(
+              <Col>
+                <ItemCard name={vehicle.name} id={`v${index}`}/>
+              </Col>
+            )
+          }
+          })}
+        </Row>
+      </Container>
+      : 
+      <div className="loading">
         <Spinner animation="border"/>
+      </div>
       }
     </div>
     );
