@@ -6,6 +6,11 @@
     background-color: black;
     color: rgb(220, 189, 17);
     height: 100%;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.search {
+    margin-bottom: 4%;
 }
 
 .starfield {
@@ -15,10 +20,23 @@
     background-size: cover;
 }
 
-.center {
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 4%;
+}
+
+.home-article {
+    margin-top: 5%;
+    width: 50%;
+    font-size: x-large;
+    background-color: #000;
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    padding: 2%;
 }
 
 .item-card {

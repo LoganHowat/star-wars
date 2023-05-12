@@ -8,14 +8,14 @@ import Logo from '../assets/MF.png';
 
 function Navigation() {
   return (
-    <Navbar bg='dark' variant='dark' className='mb-4' data-testid='nav-1'>
-      <Container>
+    <Navbar bg='dark' variant='warning' data-testid='nav-1'>
+      <Container >
         <Navbar.Brand>
           <Image src={Logo} width='60' height='50' className='me-2' />
           Star Wars
         </Navbar.Brand>
 
-        <Nav className='me-auto'>
+        <Nav className='me-auto justify-content-center'>
           <Nav.Link>
             <NavLink to='/' className='me-4'>Home</NavLink>
             <NavLink to='/films' className='me-4'>Films</NavLink>
