@@ -39,7 +39,7 @@ function DetailPage() {
 
       return (
         <div>
-        {isLoading ? 
+        {!isLoading ? 
         <DetailsCard info={details}/>
         :
         <div className="loading">
