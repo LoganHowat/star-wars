@@ -107,24 +107,24 @@ function Planets() {
   ]
 
   const [isLoading, setIsLoading] = useState(false)
-  const [planetsList, setPlanets] = useState(dummyData)
+  const [planetsList, setPlanets] = useState([])
   const [search, setSearch] = useState('');
-  const [filteredPlanets, setFilteredPlanets] = useState(dummyData)
+  const [filteredPlanets, setFilteredPlanets] = useState([])
 
   useEffect(() => {
     const fetchPlanets = async() => {
-      //setIsLoading(true)
-      //const planets = []
-      //for (let i=1;i<=60;i++){
-      //  const response = await fetch(`https://swapi.dev/api/planets/${i}/`)
-      //  const data = await response.json()
-      //  data.id = i
-      //  planets.push(data)
-      //}
-      //setPlanets(planets)
-      //setFilteredPlanets(planets)
-      //setIsLoading(false)
-      //console.log(planets)
+      setIsLoading(true)
+      const planets = []
+      for (let i=1;i<=60;i++){
+        const response = await fetch(`https://swapi.dev/api/planets/${i}/`)
+        const data = await response.json()
+        data.id = i
+        planets.push(data)
+      }
+      setPlanets(planets)
+      setFilteredPlanets(planets)
+      setIsLoading(false)
+      console.log(planets)
     };
     fetchPlanets()
   }, []);

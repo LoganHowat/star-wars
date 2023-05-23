@@ -129,26 +129,26 @@ function People() {
   ]
 
   const [isLoading, setIsLoading] = useState(false)
-  const [people, setPeople] = useState(dummyData)
+  const [people, setPeople] = useState([])
   const [search, setSearch] = useState('');
-  const [filteredPeople, setFilteredPeople] = useState(dummyData)
+  const [filteredPeople, setFilteredPeople] = useState([])
 
   useEffect(() => {
-    //const fetchPeople = async() => {
-    //  setIsLoading(true)
-    //  const people = []
-    //  for (let i=1;i<=82;i++){
-    //    const response = await fetch(`https://swapi.dev/api/people/${i}/`)
-    //    const data = await response.json()
-    //    data.id = i
-    //    people.push(data)
-    //  }
-//
-    //  setIsLoading(false)
-    //  setFilteredPeople(people)
-    //  setPeople(people)
-    //};
-    //fetchPeople()
+    const fetchPeople = async() => {
+      setIsLoading(true)
+      const people = []
+      for (let i=1;i<=82;i++){
+        const response = await fetch(`https://swapi.dev/api/people/${i}/`)
+        const data = await response.json()
+        data.id = i
+        people.push(data)
+      }
+
+      setIsLoading(false)
+      setFilteredPeople(people)
+      setPeople(people)
+    };
+    fetchPeople()
   }, []);
 
   useEffect(() => {

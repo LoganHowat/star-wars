@@ -116,26 +116,26 @@ function Starships() {
   ]
 
   const [isLoading, setIsLoading] = useState(false)
-  const [starshipsList, setStarships] = useState(dummyData)
+  const [starshipsList, setStarships] = useState([])
   const [search, setSearch] = useState('');
-  const [filteredStarships, setFilteredStarships] = useState(dummyData)
+  const [filteredStarships, setFilteredStarships] = useState([])
 
   useEffect(() => {
-    //setIsLoading(true)
-    //const fetchStarships = async() => {
-    //  const starships = []
-    //  for (let i=1;i<=36;i++){
-    //    const response = await fetch(`https://swapi.dev/api/starships/${i}/`)
-    //    const data = await response.json()
-    //    data.id = i
-    //    console.log(data)
-    //    starships.push(data)
-    //  }
-    //  setStarships(starships)
-    //  setFilteredStarships(starships)
-    //  setIsLoading(false)
-    //};
-    //fetchStarships()
+    setIsLoading(true)
+    const fetchStarships = async() => {
+      const starships = []
+      for (let i=1;i<=36;i++){
+        const response = await fetch(`https://swapi.dev/api/starships/${i}/`)
+        const data = await response.json()
+        data.id = i
+        console.log(data)
+        starships.push(data)
+      }
+      setStarships(starships)
+      setFilteredStarships(starships)
+      setIsLoading(false)
+    };
+    fetchStarships()
   }, []);
 
   useEffect(() => {

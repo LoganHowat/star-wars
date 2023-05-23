@@ -16,6 +16,7 @@ function DetailPage() {
             const data = await response.json()
             setDetails(data)
             console.log(data)
+            setIsLoading(false)
         }
 
         const fetchData = () =>{

@@ -12,12 +12,12 @@ function Navigation() {
       <Container >
         <Navbar.Brand>
           <Image src={Logo} width='60' height='50' className='me-2' />
-          Star Wars
+          Star Wars Wiki
         </Navbar.Brand>
 
         <Nav className='me-auto justify-content-center'>
           <Nav.Link>
-            <NavLink to='/' className='me-4'>Home</NavLink>
+            <NavLink to='/'  className='me-4'>Home</NavLink>
             <NavLink to='/films' className='me-4'>Films</NavLink>
             <NavLink to='/people' className='me-4'>People</NavLink>
             <NavLink to='/species' className='me-4'>Species</NavLink>

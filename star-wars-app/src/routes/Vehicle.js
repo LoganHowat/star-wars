@@ -101,25 +101,25 @@ function Vehicle() {
   ]
 
   const [isLoading, setIsLoading] = useState(false)
-  const [vehicleList, setVehicles] = useState(dummyData)
+  const [vehicleList, setVehicles] = useState([])
   const [search, setSearch] = useState('');
-  const [filteredVehicles, setFilteredVehicles] = useState(dummyData)
+  const [filteredVehicles, setFilteredVehicles] = useState([])
 
   useEffect(() => {
-    //const fetchVehicles = async() => {
-    //  setIsLoading(true)
-    //  const vehicles = []
-    //  for (let i=1;i<=39;i++){
-    //    const response = await fetch(`https://swapi.dev/api/vehicles/${i}/`)
-    //    const data = await response.json()
-    //    data.id = i
-    //    vehicles.push(data)
-    //  }
-    //  setVehicles(vehicles)
-    //  setFilteredVehicles(vehicles)
-    //  setIsLoading(false)
-    //};
-    //fetchVehicles()
+    const fetchVehicles = async() => {
+      setIsLoading(true)
+      const vehicles = []
+      for (let i=1;i<=39;i++){
+        const response = await fetch(`https://swapi.dev/api/vehicles/${i}/`)
+        const data = await response.json()
+        data.id = i
+        vehicles.push(data)
+      }
+      setVehicles(vehicles)
+      setFilteredVehicles(vehicles)
+      setIsLoading(false)
+    };
+    fetchVehicles()
   }, []);
 
   useEffect(() => {

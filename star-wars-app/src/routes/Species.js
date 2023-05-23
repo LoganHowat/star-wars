@@ -116,27 +116,27 @@ function Species() {
   ]
 
   const [isLoading, setIsLoading] = useState(false)
-  const [speciesList, setSpecies] = useState(dummyData)
+  const [speciesList, setSpecies] = useState([])
   const [search, setSearch] = useState('');
-  const [filteredSpecies, setFilteredSpecies] = useState(dummyData)
+  const [filteredSpecies, setFilteredSpecies] = useState([])
 
   useEffect(() => {
-    //const fetchSpecies = async() => {
-    //  setIsLoading(true)
-    //  const species = []
-    //  for (let i=1;i<=37;i++){
-    //    const response = await fetch(`https://swapi.dev/api/species/${i}/`)
-    //    const data = await response.json()
-    //    data.id = i
-    //    console.log(data)
-    //    species.push(data)
-    //  }
-    //  setIsLoading(false)
-    //  setFilteredSpecies(species)
-    //  setSpecies(species)
-    //  console.log(species)
-    //};
-    //fetchSpecies()
+    const fetchSpecies = async() => {
+      setIsLoading(true)
+      const species = []
+      for (let i=1;i<=37;i++){
+        const response = await fetch(`https://swapi.dev/api/species/${i}/`)
+        const data = await response.json()
+        data.id = i
+        console.log(data)
+        species.push(data)
+      }
+      setIsLoading(false)
+      setFilteredSpecies(species)
+      setSpecies(species)
+      console.log(species)
+    };
+    fetchSpecies()
   }, []);
 
   useEffect(() => {
